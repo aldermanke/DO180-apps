@@ -5,5 +5,11 @@ podman login registry.redhat.io
 
 podman ps --format "{{.ID}} {{.Image}} {{.Names}}"
 podman exec -it mysql-basic /bin/bash
+
+podman -v source:mount point in container persistant storage
 Exectute Shell:
 podman exec -it (use names or continer ID) /bin/bash
+
+git clone https://github.com/aldermanke/DO180-apps
+git pull origin testbranch
+
