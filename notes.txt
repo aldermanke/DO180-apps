@@ -1,3 +1,4 @@
 Token: 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
 git clone https://github.com/aldermanke/DO180-apps
 git status
+git test
