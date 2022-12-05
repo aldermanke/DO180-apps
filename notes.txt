@@ -2,3 +2,9 @@ Token: github_pat_11AQNSH3Y0FzUaRIKfreN4_tKRF3kJe4UH4OlfNZtJK2RQ75WZOUwa76YqYJ6p
 git clone https://github.com/aldermanke/DO180-apps
 git status
 git test
+podman login registry.redhat.io
+
+podman ps --format "{{.ID}} {{.Image}} {{.Names}}"
+podman exec -it mysql-basic /bin/bash
+Exectute Shell:
+podman exec -it (use names or continer ID) /bin/bash
