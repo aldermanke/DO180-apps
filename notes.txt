@@ -1,10 +1,13 @@
 git clone https://github.com/aldermanke/DO180-apps
 git status
 git test
+git checkout -b testbranch
 podman login registry.redhat.io
 
 podman ps --format "{{.ID}} {{.Image}} {{.Names}}"
 podman exec -it mysql-basic /bin/bash
+podman -d (run container in the background)
+172.25.250.9
 
 podman -v source:mount point in container persistant storage
 Exectute Shell:
@@ -24,3 +27,18 @@ docker save python:2.7.17-alpine3.9 > /path/to/save/my-python-container.tar
 Load: 
 
 docker load < my-python-container.tar
+
+curl -s \
+ ${RHT_OCP4_DEV_USER}-helloworld-${RHT_OCP4_DEV_USER}-s2i.\
+ ${RHT_OCP4_WILDCARD_DOMAIN}
+
+
+podman ps \
+--format="table {{.ID}} {{.Names}} {{.Image}} {{.Status}}"
+
+mysql -uuser1 -h 172.25.250.9 \
+-pmypa55 -P30306 items < \
+~/DO180/labs/multicontainer-design/deploy/nodejs/networked/db.sql
+
+curl -w "\n" \
+http://127.0.0.1:30080/todo/api/items/1
